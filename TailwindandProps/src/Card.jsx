@@ -1,7 +1,7 @@
 
 
 function Card(props) {
-    const { ladyName,data} = props;
+    const { ladyName,data,btnText = "visitme",handler} = props;
   return (
 <div className="relative h-[400px] w-[300px] rounded-md">
   <img
@@ -16,8 +16,8 @@ function Card(props) {
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
       debitis : {data}
     </p>
-    <button className="justify-center mt-2 inline-flex cursor-pointer items-center text-sm font-semibold bg-black text-white">
-      View Profile →
+    <button onClick={handler} className="justify-center mt-2 inline-flex cursor-pointer items-center text-sm font-semibold bg-black text-white">
+     {btnText}
     </button>
   </div>
 </div>
