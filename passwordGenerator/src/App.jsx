@@ -22,17 +22,17 @@ const passwordRef = useRef(null);
 
 ///2.Lets create a 'passwordGenerator' method for optimization and memoization concept
 //Because this is an one function or method we could say we are using for several times.
-//So in the React there is something known as 'useCallBack()' hook for memoization concept and we are using for optimization performance
+//So in the React there is something known as 'useCallBack()' hook for memoization concept and we are using for optimization performance as well.
 //So what is useCallBack() hook, useCallBack hook is a React hook that allow cache a function definition between re-renders.
 //what is cache means cache its like a plain object , caching is a technique used in react it helps to store a copy of a given resource in our browser and serves it back when it is requested.
-//Cache is just a plain object,caching is a technique used in react that helps to store the copy of a given resource in our browser and serves it back when needed or requested.
+
 
 //What is Memoization:-
-// Memoization its a smart way programming technique that we used  to make our functions faster by storing and reusing their past results and it relies on the idea of cache which is like a browsers memory storage.
+// Memoization its a smart way programming technique that we used  to make our functions faster by storing and reusing their past results and it relies on the idea of cache which is like a browsers temporary memory area.
 
 
 //What is callBack function:-
-//callBack function is a function that is passed as an argument to another function and then is executed when another function has finised execution.
+//callBack function is a function that is passed as an argument to another function and then is executed when another function has finished execution.
 
 
 
