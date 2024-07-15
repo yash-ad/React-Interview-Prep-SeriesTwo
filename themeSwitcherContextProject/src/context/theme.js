@@ -2,6 +2,7 @@
 import {createContext,useContext} from 'react'
 
 
+//CreateContext():-
 //Lets define some intialState and the methods and variables:-
 export const ThemeContext = createContext({
 themeMode:"light",
@@ -10,7 +11,7 @@ lightTheme:()=>{},
 }
 );
 
-//Context provider
+//Context provider:-
 export const ThemeProvider = ThemeContext.Provider;
 
 
