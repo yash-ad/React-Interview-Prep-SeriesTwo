@@ -12,10 +12,12 @@ function TodoForm() {
     const { addTodo } = useTodo();
 
 
+    //Event handler:-
     const add = (event) => {
         event.preventDefault();
 
         if (!todo) return
+        
         
         addTodo({ todo, completed: false })
 

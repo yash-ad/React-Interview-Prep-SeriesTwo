@@ -9,7 +9,6 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   //Lets define functionalities for these methods which are extracted from the Context:-
-  
   //1.For adding a todo into the Todos list which means into an Array.
   const addTodo = (todo) => {
     //We know that each setState method or function from the useState hook that has an access of callBack function and in this callback function we can access of previous value.
@@ -45,7 +44,7 @@ setTodos((prevTodos)=> [{id:Date.now(),...todo},...prevTodos] )
 
   //Implementing 'localStorage' into the Todos context:-
 
-  //using 'useEffect()' hook for ahndling sideEffects in functional component, so here in the React  we are using localStorage .
+  //using 'useEffect()' hook for handling sideEffects in functional component, so here in the React  we are using localStorage .
   //First and foremost thing , What is localStorage?
   //LocalStorage is a part of webStorage API which is provided by the browser to store data locally into the users browser,the data will be stored even when the browser is closed or reOpened.the data is stored into the key-value pairs.
   //It takes two methods

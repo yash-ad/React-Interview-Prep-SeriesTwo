@@ -1,8 +1,9 @@
 import { createContext, useContext } from 'react'
 
 
-//createContext():-
+//createContext() with an initialState by default:-
 export const TodoContext = createContext({
+    //Todos its an array
     todos: [
     //Todo its an object
         {
@@ -11,6 +12,7 @@ export const TodoContext = createContext({
        completed:false,
      }
     ],
+    //functionalities:-
     addTodo: (todo) => {},
     updateTodo:(id,todo)=>{},
     deleteTodo: (id) => {},
@@ -22,7 +24,7 @@ export const TodoProvider = TodoContext.Provider;
 
 //custom hook:-
 export const useTodo = () => {
-   return  useContext(TodoContext)
+ return useContext(TodoContext)
 };
 
 
