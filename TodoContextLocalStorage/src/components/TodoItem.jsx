@@ -1,5 +1,30 @@
-function TodoItem({ todo }) {
+import { useState } from 'react';
+import { useTodo } from '../contexts/Index'
+
+
+//prop:-Here todo its an object and its destructured.
+function TodoItem({ todo })
+{
+     
+         //First of all extract those values which we want from context.
+         const { updateTodo, deleteTodo, toggleComplete} = useTodo();
+
+    //State for todo editable:-
+    const [isTodoEditable, setIsTodoEditable] = useState(false);
+
+    //state for todo message:-
+    const [todoMsg,setTodoMsg] = useState(todo.todo)
+
+    //Funtionality for editing and mainly updating  the todo:-
+    const editTodo = () => {
+        updateTodo(todo.id, { ...todo, todo: todoMsg })
+        setIsTodoEditable(false)
+    }
     
+    //Functionality for toggling the input checkbox
+    const toggleCompleted = () => {
+       toggleComplete(todo.id) 
+    }
 
     return (
         <div

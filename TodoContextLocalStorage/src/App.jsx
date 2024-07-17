@@ -1,6 +1,7 @@
 import { TodoProvider } from "./contexts/TodoContext";
 import { useEffect, useState } from "react";
-
+import TodoForm from './components/TodoForm';
+import TodoItem from './components/TodoItem'
 
 function App() {
 
@@ -15,7 +16,8 @@ function App() {
     //Because here the goal is to add an individual todo with previous todo list.
     //Spread operator in an array for spreading the existing values.
     //And here 'Todos' its an Array.
-    setTodos((prevTodos)=> [{id:Date.now(),...todo},prevTodos])
+    //Create a new array into the states function and spread the existing values in an array using spread operator.
+setTodos((prevTodos)=> [{id:Date.now(),...todo},...prevTodos] )
   };
 
   //2.For updating the todo into the Todos list which means into an Array.
@@ -35,7 +37,7 @@ function App() {
 
   //4.toggleComplete functionality for toggle whenever the task is completed:-
   const toggleComplete = (id) => {
-    console.log(id);
+    // console.log(id);
   //For previous state access 'prevTodo'
     setTodos((prevTodos)=> prevTodos.map((individualTodo)=> individualTodo.id === id ? {...individualTodo,completed:!individualTodo.completed}:individualTodo))
   }
@@ -76,10 +78,18 @@ localStorage.setItem("todos",JSON.stringify(todos))
                 <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
                     <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
                     <div className="mb-4">
-                        {/* Todo form goes here */} 
+            {/* Todo form goes here */} 
+            <TodoForm/>
                     </div>
-                    <div className="flex flex-wrap gap-y-3">
+                     <div className="flex flex-wrap gap-y-3">
                         {/*Loop and Add TodoItem here */}
+                        {todos.map((todo) => (
+                          <div key={todo.id}
+                          className='w-full'
+                          >
+                            <TodoItem todo={todo} />
+                          </div>
+                        ))}
                     </div>
                 </div>
             </div>
