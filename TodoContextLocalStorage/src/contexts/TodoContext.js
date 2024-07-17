@@ -10,10 +10,10 @@ export const TodoContext = createContext({
        completed:false,
      }
     ],
-    addTodo: (todo) => { },
+    addTodo: (todo) => {},
     updateTodo:(id,todo)=>{},
-    deleteTodo: (id) => { },
-    toggleComplete:(id)=>{ }
+    deleteTodo: (id) => {},
+    toggleComplete:(id)=>{}
 });
 
 //context.Provider:-
