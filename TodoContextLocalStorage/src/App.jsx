@@ -1,5 +1,5 @@
 import { TodoProvider } from "./contexts/TodoContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 function App() {
@@ -41,9 +41,34 @@ function App() {
   }
   
 
+  //Implementing 'localStorage' into the Todos context:-
 
-
+  //using 'useEffect()' hook for ahndling sideEffects in functional component, so here in the React  we are using localStorage .
+  //First and foremost thing , What is localStorage?
+  //LocalStorage is a part of webStorage API which is provided by the browser to store data locally into the users browser,the data will be stored even when the browser is closed or reOpened.the data is stored into the key-value pairs.
+  //It takes two methods
+  //localStorage.getItem("key");
+    //localStorage.setItem("key","value");
   
+  //We can directly access 'localStorage' from the browser it can directly access to the client-side-rendering.
+
+  //Now what is JSON.parse() method?
+  // JSON.parse() this method used in javascript to parse a JSON string,It can convert JSON text into the javascript object , array or other value.
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem('todos'))
+    
+    if (todos && todos.length > 0) {
+      setTodos(todos)
+    }
+  }, [])
+  
+
+  useEffect(() => {
+localStorage.setItem("todos",JSON.stringify(todos))
+  },[todos])
+
+
+
   return (
     //Object destructuring to extract the values from the context.
     <TodoProvider value={{addTodo,updateTodo,deleteTodo,toggleComplete}}>
