@@ -8,7 +8,7 @@ function App() {
   //State for Data management and make changes into the UI:-
   const [todos, setTodos] = useState([]);
 
-  //Lets define functionalities for these methods which are extracted from the Context:-
+  
   //1.For adding a todo into the Todos list which means into an Array.
   const addTodo = (todo) => {
     //We know that each setState method or function from the useState hook that has an access of callBack function and in this callback function we can access of previous value.
@@ -71,6 +71,7 @@ localStorage.setItem("todos",JSON.stringify(todos))
 
 
   return (
+    //Lets define functionalities for these methods which are extracted from the Context:-
     //Object destructuring to extract the values from the context.
     <TodoProvider value={{addTodo,updateTodo,deleteTodo,toggleComplete}}>
  <div className="bg-[#172842] min-h-screen py-8">
