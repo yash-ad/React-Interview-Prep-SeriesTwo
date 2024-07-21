@@ -12,7 +12,7 @@ function AddTodo() {
   //Event handler for 'form'
   const addTodoHandler = (event) => {
     event.preventDefault()
-    //to check if an input filed is empty
+    //to check if an input field is empty
     if (input.trim() === '') {
       alert('Kindly write some todo text !');
       return;
