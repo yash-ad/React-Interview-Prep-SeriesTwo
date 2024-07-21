@@ -12,6 +12,11 @@ function AddTodo() {
   //Event handler for 'form'
   const addTodoHandler = (event) => {
     event.preventDefault()
+    //to check if an input filed is empty
+    if (input.trim() === '') {
+      alert('Kindly write some todo text !');
+      return;
+    }
     //Here to dispatch an action
     //And here the action is to 'addTodo'
     dispatch(addTodo(input))
@@ -20,6 +25,7 @@ function AddTodo() {
   };
 
   return (
+    <div className=' flex justify-center'>
  <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
       <input
         type="text"
@@ -34,7 +40,8 @@ onChange={(event)=> setInput(event.target.value)}
       >
         Add Todo
       </button>
-    </form>
+      </form>
+      </div>
   )
 }
 

@@ -38,7 +38,7 @@ function Todos() {
             <ul className="list-none">
                 {todos.map((todo) => (
                     <li
-                        className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
+                        className="mt-4 flex justify-between items-center bg-zinc-800 px-1 py-2 rounded"
                         key={todo.id}
                     >
 
@@ -69,7 +69,7 @@ function Todos() {
                   
 <div className="text-white">{todo.text}</div>
 <button
-    className="flex flex-row-reverse text-white bg-blue-600 border-0 py-1 px-4 focus:outline-none hover:bg-blue-800 rounded text-mg ml-auto space-x-10"
+    className="flex flex-row-reverse text-white bg-blue-600 border-0 py-1 px-4 focus:outline-none hover:bg-blue-800 rounded text-mg ml-auto space-x-10 mx-5"
     onClick={()=>handleEdit(todo.id,todo.text)}                            
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
